@@ -17,16 +17,26 @@ united_kingdom = [
 ]
 
 # 1. Change the capital of Wales from `"Swansea"` to `"Cardiff"`.
+united_kingdom[1][:capital] = "cardiff"
 
-
-# united_kingdom [{:name=>"Wales"}, {:capital=>"Swansea"}][1][:capital] = 31
-
-# united_kingdom[1] = [name:"Wales", population: 3063000, :capital  "Cardiff"]
 
 # 2. Create a Hash for Northern Ireland and add it to the `united_kingdom` array (The capital is Belfast, and the population is 1,811,000).
-united_kingdom.push(name: "Northern Ireland", population: 1811000, capital: "Belfast")
+united_kingdom.push({
+  name: "Northern Ireland",
+  population: 1811000,
+  capital: "Belfast"
+  })
 p united_kingdom
 # 3. Use a loop to print the names of all the countries in the UK.
 for country in united_kingdom
   p country[:name]
 end
+
+# find total uk population
+
+total_pop = 0
+for pop in united_kingdom
+  total_pop += pop[:population]
+End
+
+p "The total population is #{total_pop}"
